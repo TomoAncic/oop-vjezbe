@@ -1,7 +1,7 @@
 #include "vjezba3.hpp"
+#include <algorithm>
 
-
-void unos1(vector<int> &v, int velicina)
+void unos1(vector<int>& v, int velicina)
 {
 	for (int i = 0; i < velicina; i++)
 	{
@@ -37,4 +37,45 @@ void ispis(vector<int>& v)
 		cout << a << " ";
 	}
 	cout << endl;
+}
+
+vector<int> drugizad(vector<int>& prvi, vector<int>& drugi)
+{
+	vector<int> rezultat;
+	for (int a : prvi)
+	{
+		if (find(drugi.begin(), drugi.end(), a) == drugi.end())
+		{
+			rezultat.push_back(a);
+		}
+	}
+	return rezultat;
+}
+
+void zadatak3(vector<int>& zad3)
+{
+	sort(zad3.begin(), zad3.end());
+	int min = zad3[0];
+	zad3.insert(find(zad3.begin(), zad3.end(), min), 0);
+
+	int max = *max_element(zad3.begin(), zad3.end());
+	int sum = 0;
+	int b = false;
+	for (int a : zad3)
+	{
+		if (b == false)
+		{
+			sum += a;
+		}
+		if (a == max)
+		{
+			b = true;
+		}
+	}
+	zad3.push_back(sum);
+}
+
+void zadatak4(vector<int>& v, int element)
+{
+	v.erase(remove(v.begin(), v.end(), element), v.end());
 }
