@@ -27,7 +27,7 @@ void unos_matrice(matrica& m)
 	}
 }
 
-void generiranje_matrice(matrica &m, float a, float b)
+void generiranje_matrice(matrica& m, float a, float b)
 {
 	for (int i = 0; i < m.redci; i++)
 	{
@@ -48,7 +48,7 @@ matrica zbrajanje(const matrica& A, const matrica& B)
 	matrica rezultat;
 	rezultat.redci = A.redci;
 	rezultat.stupci = A.stupci;
-	rezultat.podatci= new float* [A.redci];
+	rezultat.podatci = new float* [A.redci];
 	for (int i = 0; i < A.redci; i++) {
 		rezultat.podatci[i] = new float[A.stupci];
 		for (int j = 0; j < A.stupci; j++) {
@@ -85,7 +85,7 @@ matrica mnozenje(const matrica& A, const matrica& B)
 	}
 	matrica rezultat;
 	rezultat.redci = A.redci;
-	rezultat.redci = B.stupci;
+	rezultat.stupci = B.stupci;
 	rezultat.podatci = new float* [A.redci];
 	for (int i = 0; i < A.redci; i++) {
 		rezultat.podatci[i] = new float[B.stupci];
@@ -116,7 +116,7 @@ matrica transponirana(const matrica m)
 }
 
 void ispis(const matrica& m) {
-	for (int i = 0; i < m.redci; i++) 
+	for (int i = 0; i < m.redci; i++)
 	{
 		for (int j = 0; j < m.stupci; j++)
 		{
