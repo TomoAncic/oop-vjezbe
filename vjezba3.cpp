@@ -60,17 +60,9 @@ void zadatak3(vector<int>& zad3)
 
 	int max = *max_element(zad3.begin(), zad3.end());
 	int sum = 0;
-	int b = false;
 	for (int a : zad3)
 	{
-		if (b == false)
-		{
-			sum += a;
-		}
-		if (a == max)
-		{
-			b = true;
-		}
+		sum += a;
 	}
 	zad3.push_back(sum);
 }
