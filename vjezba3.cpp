@@ -55,10 +55,8 @@ vector<int> drugizad(vector<int>& prvi, vector<int>& drugi)
 void zadatak3(vector<int>& zad3)
 {
 	sort(zad3.begin(), zad3.end());
-	int min = zad3[0];
-	zad3.insert(find(zad3.begin(), zad3.end(), min), 0);
+	zad3.insert(zad3.begin(), 0);
 
-	int max = *max_element(zad3.begin(), zad3.end());
 	int sum = 0;
 	for (int a : zad3)
 	{
