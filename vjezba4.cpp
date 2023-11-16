@@ -55,6 +55,12 @@ vector<string> sortiranje()
 	return vektor_stringova;
 }
 
+bool provjera(char c)
+{
+	return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+		c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+}
+
 void prijevod(string& str)
 {
 	string prijevod;
@@ -69,14 +75,19 @@ void prijevod(string& str)
 		else {
 			if (!rijec.empty())
 			{
-				if (rijec[0] == 'a' || rijec[0] == 'e' || rijec[0] == 'i' || rijec[0] == 'o' || rijec[0] == 'u' ||
-					rijec[0] == 'A' || rijec[0] == 'E' || rijec[0] == 'I' || rijec[0] == 'O' || rijec[0] == 'U')
+				string suglasnici;
+				int i = 0;
+				while (i < rijec.length() && !provjera(rijec[i]))
+				{
+					suglasnici.push_back(rijec[i]);
+					i++;
+				}
+				if (provjera(rijec[0]))
 				{
 					prijevod += rijec + "hay";
 				}
-				else
-				{
-					prijevod += rijec.substr(1) + rijec[0] + "ay";
+				else {
+					prijevod += rijec.substr(i) + suglasnici + "ay";
 				}
 				rijec.clear();
 			}
