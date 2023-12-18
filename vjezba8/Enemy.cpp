@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Enemy::Enemy(string& name, int health, int damage)
+Enemy::Enemy(std::string& name, int health, int damage)
 {
 	this->name = name;
 	this->damage = damage;
@@ -16,7 +16,15 @@ Enemy::Enemy(string& name, int health, int damage)
 	}
 }
 
-Boss::Boss(string& name, int health, int damage, string& oruzje) :Enemy(name, health, damage)
+void Enemy::attack() {
+	cout << "Enemy napada" << endl;
+}
+
+void Enemy::displayInfo() {
+	cout << "Enemy ime: " << name << ", " << "health: " << health << ", " << "damage: " << damage << endl;
+}
+
+Boss::Boss(std::string& name, int health, int damage, std::string& oruzje) :Enemy(name, health, damage)
 {
 	if (oruzje.empty())
 	{
@@ -25,28 +33,27 @@ Boss::Boss(string& name, int health, int damage, string& oruzje) :Enemy(name, he
 	this->oruzje = oruzje;
 }
 
-void attack() {
-	cout << "Boss napada sa oruzjem " << endl;
+void Boss::attack() {
+	cout << "Boss napada" << endl;
 }
 
-void displayInfo() {
+void Boss::displayInfo() {
 	cout << "Boss ime: " << name << ", " << "health: " << health << ", " << "damage: " << damage << ", " << "oruzje: " << oruzje << endl;
 }
 
 
-Monster(string& name, int health, int damage, string& sposobnost) :Enemy(name, health, damage)
-{
-	if (sposobnosti.empty())
+Monster::Monster(std::string& name, int health, int damage, std::string& sposobnost) :Enemy(name, health, damage) {
+	if (sposobnost.empty())
 	{
 		throw std::invalid_argument("Mora postojati sposobnost");
 	}
 	this->sposobnosti = sposobnost;
 }
 
-void attack() {
+void Monster::attack() {
 	cout << "Monster napada" << endl;
 }
 
-void displayInfo() {
+void Monster::displayInfo() {
 	cout << "Monster ime: " << name << ", " << "health: " << health << ", " << "damage: " << damage << ", " << "sposobnost: " << sposobnosti << endl;
 }
