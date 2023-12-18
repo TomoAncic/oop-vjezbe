@@ -1,44 +1,43 @@
 #ifndef ENEMY_H
 #define ENEMY_H
-#include <string>
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Enemy {
 protected:
-	string name;
+	std::string name;
 	int health;
 	int damage;
 
 public:
-	Enemy(string& name, int health, int damage);
+	Enemy(std::string& name, int health, int damage);
 
-	void attack();
-	void displayInfo();
+	virtual void attack();
+	virtual void displayInfo();
 };
 
 class Boss : public Enemy {
 private:
-	string oruzje;
+	std::string oruzje;
 public:
-	Boss(string& name, int health, int damage, string& oruzje);
-	
-	void attack();
+	Boss(std::string& name, int health, int damage, std::string& oruzje);
 
-	void displayInfo();
+	void attack() override;
+
+	void displayInfo() override;
 
 };
 
 class Monster :public Enemy {
 private:
-	string sposobnosti;
+	std::string sposobnosti;
 public:
-	Monster(string& name, int health, int damage, string& sposobnost);
+	Monster(std::string& name, int health, int damage, std::string& sposobnost);
 
-	void attack();
+	void attack() override;
 
-	void displayInfo();
+	void displayInfo() override;
 
 };
 #endif
-
