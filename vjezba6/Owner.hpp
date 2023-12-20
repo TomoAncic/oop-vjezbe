@@ -10,6 +10,7 @@ private:
 
 public:
     Owner(const std::string& ime);
+    Owner(const Owner& drugi);
 
     void dodaj_ljubimca(VirtualPet ljubimac);
     void radnja();
