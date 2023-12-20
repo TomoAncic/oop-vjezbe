@@ -52,3 +52,9 @@ VirtualPet Owner::najsretniji() {
     }
     return najsretniji;
 }
+
+Owner::Owner(const Owner& drugi) :ime(drugi.ime) {
+    for (auto& ljubimac : drugi.ljubimci) {
+        ljubimci.push_back(VirtualPet(ljubimac));
+    }
+}
