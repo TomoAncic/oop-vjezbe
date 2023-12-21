@@ -5,7 +5,6 @@ using namespace std;
 
 int main() {
 
-    int br_lj = 3;
     int br_a = 5;
 
     Owner vlasnik1("Ante");
