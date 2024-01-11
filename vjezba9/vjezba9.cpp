@@ -75,26 +75,6 @@ void sortiraj(char* niz, int duzina) {
 template <typename T>
 class point {
 private:
-	T x;
-	T y;
-public:
-	point(T x, T y) {
-		this->x = x;
-		this->y = y;
-	}
-
-	T returnX() const{
-		return x;
-	}
-
-	T returnY() const{
-		return y;
-	}
-};
-
-template <typename T>
-class point {
-private:
 	T x, y;
 
 public:
