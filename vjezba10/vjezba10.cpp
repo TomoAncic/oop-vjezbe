@@ -77,7 +77,7 @@ void processPoints() {
         [radius](const Point& p) {
             return p.distance() <= radius;
         });
-    std::cout << "Broj tocaka unutar kruga: " << count << std::endl;
+    std::cout << "Broj tocaka unutar kruga: " << count << std::endl;
 
 
     double specificDistance = 3.0; 
